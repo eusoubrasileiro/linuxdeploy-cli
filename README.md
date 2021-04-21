@@ -4,7 +4,7 @@ Copyright (C) 2015-2019 Anton Skshidlevsky, GPLv3
 
 A command line application for installing and running GNU/Linux distributions in the chroot environment.
 
-### Dependencies
+### Dependencies (added on bin\ folder)
 
 - [Linux](http://kernel.org)
 - [BusyBox](https://github.com/meefik/busybox) or Bash and GNU utils
@@ -13,6 +13,41 @@ A command line application for installing and running GNU/Linux distributions in
 - [PRoot](https://github.com/meefik/PRoot) for work without superuser permissions
 
 ### Usage
+
+All commands must be executed from inside bin\ folder. Due binaries needed there and also the script expects this. Otherwise it will fail.  
+There is already a debian.conf inside config\ folder that can be used with `-p debian` option.  
+
+Example to install-deploy the debian.conf file.  
+
+```
+./../cli.sh -p debian deploy
+
+```
+
+Example to only mount the container after debian.conf file.  
+Usefull to issue commands with `shell` or to use `deploy -c` (configure ssh for example).
+
+```
+./../cli.sh -p debian mount
+
+```
+
+Example start debian container. Starts the ssh server specified.
+
+```
+./../cli.sh -p debian start
+
+```
+
+Example stop debian container running.
+Usefull to `shell` or `deploy -c` (configure ssh for example).
+
+```
+./../cli.sh -p debian stop -u
+
+```
+
+
 
 Main help:
 
@@ -53,7 +88,14 @@ COMMANDS:
 
 ```
 
-Help for the parameters of the main components:
+Help for the parameters of the main components. Usage is:  
+It will overwrite debian.conf file inside config folder.  
+
+```
+./../cli.sh -p debian config [PARAMETERS]
+
+```
+
 
 ```
    --distrib="debian"
