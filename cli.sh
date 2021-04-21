@@ -7,8 +7,13 @@
 ################################################################################
 
 # avoid needing to run from bin folder
-PATH="$PATH:`pwd`\bin"
+PATH="$PATH:`pwd`/bin"
 export PATH
+echo "PATH is $PATH"
+#PATH=/data/ssh/root/linuxdeploy-cli/bin:$PATH
+ENV_DIR="/data/ssh/root/linuxdeploy-cli"
+export ENV_DIR
+echo "ENV_DIR is $ENV_DIR"
 
 VERSION="2.5.1"
 
