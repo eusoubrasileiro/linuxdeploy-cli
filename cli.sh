@@ -1,10 +1,14 @@
-#!/bin/bash
+#!/system/xbin/bash
 ################################################################################
 #
 # Linux Deploy CLI
 # (C) 2012-2019 Anton Skshidlevsky <meefik@gmail.com>, GPLv3
 #
 ################################################################################
+
+# avoid needing to run from bin folder
+PATH="$PATH:`pwd`\bin"
+export PATH
 
 VERSION="2.5.1"
 
