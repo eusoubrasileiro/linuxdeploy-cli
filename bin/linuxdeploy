@@ -1,4 +1,5 @@
-#!/data/user/0/ru.meefik.linuxdeploy/files/bin/sh
-PATH=/data/user/0/ru.meefik.linuxdeploy/files/bin:$PATH
-ENV_DIR="/data/user/0/ru.meefik.linuxdeploy/files"
+#!/data/ssh/root/linuxdeploy-cli/bin/sh
+# change to ssh/root folder of magisk
+PATH=/data/ssh/root/linuxdeploy-cli/bin:$PATH
+ENV_DIR="/data/ssh/root/linuxdeploy-cli/"
 . "${ENV_DIR}/cli.sh"
