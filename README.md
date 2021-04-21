@@ -12,6 +12,14 @@ A command line application for installing and running GNU/Linux distributions in
 - [binfmt_misc](https://en.wikipedia.org/wiki/Binfmt_misc) module for architecture emulation without PRoot
 - [PRoot](https://github.com/meefik/PRoot) for work without superuser permissions
 
+### Busybox
+
+Install it on the bin folder where it is located. With
+```
+busybox --install .
+```
+
+
 ### Usage
 
 All commands must be executed from inside bin\ folder. Due binaries needed there and also the script expects this. Otherwise it will fail.  
