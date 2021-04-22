@@ -2,7 +2,7 @@
 # Linux Deploy Component
 # (c) Anton Skshidlevsky <meefik@gmail.com>, GPLv3
 
-[ -n "${SUITE}" ] || SUITE="latest-stable"
+[ -n "${SUITE}" ] || SUITE="v3.13"
 
 if [ -z "${ARCH}" ]
 then
@@ -11,6 +11,7 @@ then
     x86_64) ARCH="x86_64" ;;
     arm) ARCH="armhf" ;;
     arm_64) ARCH="aarch64" ;;
+    arm64) ARCH="aarch64" ;;
     esac
 fi
 
@@ -29,12 +30,15 @@ apk_install()
 
 do_install()
 {
+    
     is_archive "${SOURCE_PATH}" && return 0
 
-    msg ":: Installing ${COMPONENT} ... "
+    msg ":: Installing ${COMPONENT} ... "    
 
     msg -n "Retrieving rootfs archive ... "
     local repo_url="${SOURCE_PATH%/}/${SUITE}"
+    #msg "repo_URL ${repo_url} arch ${ARCH}" # fixed    
+    
     local rootfs_name=$(wget -q -O - "${repo_url}/releases/${ARCH}/latest-releases.yaml" | grep -m1 "file: alpine-minirootfs" | awk '{print $2}')
     wget -q -O - "${repo_url}/releases/${ARCH}/${rootfs_name}" | tar xz -C "${CHROOT_DIR}"
     is_ok "fail" "done" || return 1
@@ -55,7 +59,7 @@ cat <<EOF
      Architecture of Linux distribution, supported "aarch64", "armhf", "x86" and "x86_64".
 
    --suite="${SUITE}"
-     Version of Linux distribution, supported version "latest-stable", "edge".
+     Version of Linux distribution, supported version "v3.13".
 
    --source-path="${SOURCE_PATH}"
      Installation source, can specify address of the repository or path to the rootfs archive.
