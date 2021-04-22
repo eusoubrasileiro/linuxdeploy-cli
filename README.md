@@ -4,7 +4,7 @@ Copyright (C) 2015-2019 Anton Skshidlevsky, GPLv3
 
 A command line application for installing and running GNU/Linux distributions in the chroot environment.
 
-### Dependencies (added on bin\ folder)
+### Dependencies (on `bin` folder)
 
 - [Linux](http://kernel.org)
 - [BusyBox](https://github.com/meefik/busybox) or Bash and GNU utils
@@ -16,13 +16,13 @@ A command line application for installing and running GNU/Linux distributions in
 
 Install it on the bin folder where it is located. With
 ```
-busybox --install .
+./busybox --install .
 ```
 
 
 ### Usage
 
-There is already a debian.conf inside config\ folder that can be used with `-p debian` option.  
+There is already a debian.conf inside `config` folder that can be used with `-p debian` option.  
 
 Example to install-deploy the debian.conf file. Command `deploy` already configures after install.
 
