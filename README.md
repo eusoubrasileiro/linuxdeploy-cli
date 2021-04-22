@@ -22,28 +22,27 @@ busybox --install .
 
 ### Usage
 
-All commands must be executed from inside bin\ folder. Due binaries needed there and also the script expects this. Otherwise it will fail.  
 There is already a debian.conf inside config\ folder that can be used with `-p debian` option.  
 
-Example to install-deploy the debian.conf file.  
+Example to install-deploy the debian.conf file. Command `deploy` already configures after install.
 
 ```
-./../cli.sh -p debian deploy
+./cli.sh -p debian deploy
 
 ```
 
 Example to only mount the container after debian.conf file.  
-Usefull to issue commands with `shell` or to use `deploy -c` (configure ssh for example).
+Usefull to issue commands with `shell` or to use `deploy -c` (re-configure ssh for example).
 
 ```
-./../cli.sh -p debian mount
+./cli.sh -p debian mount
 
 ```
 
 Example start debian container. Starts the ssh server specified.
 
 ```
-./../cli.sh -p debian start
+./cli.sh -p debian start
 
 ```
 
@@ -51,7 +50,7 @@ Example stop debian container running.
 Usefull to `shell` or `deploy -c` (configure ssh for example).
 
 ```
-./../cli.sh -p debian stop -u
+./cli.sh -p debian stop -u
 
 ```
 
@@ -100,7 +99,7 @@ Help for the parameters of the main components. Usage is:
 It will overwrite debian.conf file inside config folder.  
 
 ```
-./../cli.sh -p debian config [PARAMETERS]
+./cli.sh -p debian config [PARAMETERS]
 
 ```
 
