@@ -7,13 +7,15 @@
 ################################################################################
 
 # avoid needing to run from bin folder
-PATH="$PATH:`pwd`/bin"
+PATH="`pwd`/bin" # only using meefik busybox
+# PATH=/data/ssh/root/linuxdeploy-cli/bin  # desired PATH
 export PATH
-echo "PATH is $PATH"
-#PATH=/data/ssh/root/linuxdeploy-cli/bin:$PATH
-ENV_DIR="/data/ssh/root/linuxdeploy-cli"
+echo "PATH is ${PATH}"
+
+ENV_DIR="`pwd`"
+#ENV_DIR="/data/ssh/root/linuxdeploy-cli" # desired PATH
 export ENV_DIR
-echo "ENV_DIR is $ENV_DIR"
+echo "ENV_DIR is ${ENV_DIR}"
 
 VERSION="2.5.1"
 
